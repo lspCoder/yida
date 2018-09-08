@@ -1,6 +1,6 @@
 import Bmob from 'Bmob'
 
-Bmob.initialize("98427cdfa489eaeb7de1442ec573d673", "7ae7c103708b0c4ec3e194376d8a5bc6");
+Bmob.initialize("你的appid", "你的appsceret");
 
 export default Bmob;
 
