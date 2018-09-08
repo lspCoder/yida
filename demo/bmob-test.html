@@ -1,0 +1,29 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../src/libs/bmob-min.js"></script>
+</head>
+<body>
+	<script>
+		Bmob.initialize("98427cdfa489eaeb7de1442ec573d673", "7ae7c103708b0c4ec3e194376d8a5bc6");
+
+		// var user = Bmob.Object.extend("UserInfo");
+	 //    var query = new Bmob.Query(user);
+	 //    query.equalTo('phoneNumber', '15071235801');
+	 //    query.find({
+	 //    	success: function(result) {
+	 //    		console.log(result);
+	 //    	},
+	 //    	error: function(error) {
+	 //    		console.log(error);
+	 //    	}
+	 //    })
+	    Bmob.Sms.requestSmsCode({"mobilePhoneNumber": "15071235801"} ).then(function(obj) {
+		  	console.log("smsId:"+obj.smsId); //
+		}, function(err){
+		  	console.log(err);
+		});
+	</script>
+</body>
+</html>

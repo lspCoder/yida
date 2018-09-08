@@ -1,0 +1,94 @@
+::-webkit-scrollbar {
+  width: 2px;
+  height: 2px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, .1);
+}
+
+.header {
+  /*position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;*/
+  z-index:2;
+}
+
+.bottom_nav .mu-bottom-nav-shift-wrapper {
+  display: flex;
+  justify-content: space-around;
+}
+
+.bottom_nav {
+  /*height: 5rem;*/
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.content {
+  overflow: auto;
+  width: 100%;
+  /*padding-top: 35px;*/
+  padding-bottom: 51px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 88vh;
+  background-color: #f5f6f8;
+}
+
+/* 登录页面背景图 */
+.logo-bg {
+  background-image: url('../logo-1.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-color: #00B4FF;
+  transform: scale(.8);
+  height: 250px;
+}
+
+/* 注册页面step图 */
+/* .step-img {
+  background-image: url('../icons/register1.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  height: 150px;
+} */
+
+
+
+
+/* 页面切换效果 */
+.slide-right-enter-active,
+.slide-right-leave-active,
+.slide-left-enter-active,
+.slide-left-leave-active {
+  will-change: transform;
+  transition: all 500ms;
+  position: absolute;
+}
+.slide-right-enter {
+  opacity: 0;
+  transform: translate3d(-100%, 0, 0);
+}
+.slide-right-leave-active {
+  opacity: 0;
+  transform: translate3d(100%, 0, 0);
+}
+.slide-left-enter {
+  opacity: 0;
+  transform: translate3d(100%, 0, 0);
+}
+.slide-left-leave-active {
+  opacity: 0;
+  transform: translate3d(-100%, 0, 0);
+}
