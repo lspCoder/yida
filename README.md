@@ -28,3 +28,5 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 =======
 基于vue的航班app
 
+博客地址：https://lspcoder.github.io/2018/08/13/vue%E7%BB%93%E5%90%88HBuilder%E5%BC%80%E5%8F%91%E6%9C%BA%E7%A5%A8%E8%88%AA%E7%8F%ADapp/
+
