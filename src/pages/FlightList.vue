@@ -74,13 +74,13 @@
             </mu-list>
         </div>
         <mu-bottom-nav :value="bottomNav" @click="handleClickNav" @change="handleChangeNav" class="bottom_nav">
-            <mu-bottom-nav-item :title="bottomNav1" icon="schedule" value="time">
+            <mu-bottom-nav-item @click.native="handleBottomNav1" :title="bottomNav1" icon="schedule" value="time">
             </mu-bottom-nav-item>
-            <mu-bottom-nav-item :title="bottomNav2" icon="favorite" value="price">
+            <mu-bottom-nav-item @click.native="handleBottomNav2" :title="bottomNav2" icon="favorite" value="price">
             </mu-bottom-nav-item>
-            <mu-bottom-nav-item icon="view_carousel" title="舱位" value="seat">
+            <mu-bottom-nav-item @click.native="handleBottomNav3" icon="view_carousel" title="舱位" value="seat">
             </mu-bottom-nav-item>
-            <mu-bottom-nav-item icon="flight_takeoff" title="航空公司" value="flight">
+            <mu-bottom-nav-item @click.native="handleBottomNav4" icon="flight_takeoff" title="航空公司" value="flight">
             </mu-bottom-nav-item>
         </mu-bottom-nav>
         <mu-bottom-sheet :open="bottomNav3" @close="closeBottomNav3">
@@ -222,18 +222,12 @@
 			handleChangeNav (val) {
 				switch(val) {
 					case 'time':
-						if (this.bottomNav1 == '从早到晚') {
-							this.bottomNav1 = '从晚到早';
-						} else {
-							this.bottomNav1 = '从早到晚';
-						}
+						this.bottomNav1 = "时间";
+						this.bottomNav2 = "价格";
 						break;
 					case 'price':
-						if (this.bottomNav2 == '从低到高') {
-							this.bottomNav2 = '从高到低';
-						} else {
-							this.bottomNav2 = '从低到高';
-						}
+						this.bottomNav1 = "时间";
+						this.bottomNav2 = "价格";
 						break;
 					case 'seat':
 						this.openBottomNav3();
@@ -278,32 +272,28 @@
 		    	})
 		      	this.bottomNav4 = true;
 		    },
-		    handleClickNav: function(val) {
-		    	console.log(val);
-		    	switch(val) {
-					case 'time':
-						if (this.bottomNav1 == '从早到晚') {
-							this.bottomNav1 = '从晚到早';
-						} else {
-							this.bottomNav1 = '从早到晚';
-						}
-						break;
-					case 'price':
-						if (this.bottomNav2 == '从低到高') {
-							this.bottomNav2 = '从高到低';
-						} else {
-							this.bottomNav2 = '从低到高';
-						}
-						break;
-					case 'seat':
-						this.openBottomNav3();
-						break;
-					case 'flight':
-						this.openBottomNav4();
-						break;
-					default:
-						break;
+		    handleBottomNav1: function (e) {
+		    	if (this.bottomNav1 == '从早到晚') {
+					this.bottomNav1 = '从晚到早';
+				} else {
+					this.bottomNav1 = '从早到晚';
 				}
+		    },
+		    handleBottomNav2: function (e) {
+				if (this.bottomNav2 == '从低到高') {
+					this.bottomNav2 = '从高到低';
+				} else {
+					this.bottomNav2 = '从低到高';
+				}
+		    },
+		    handleBottomNav3: function (e) {
+				this.openBottomNav3();
+		    },
+		    handleBottomNav4: function (e) {
+				this.openBottomNav4();
+		    },
+		    handleClickNav: function(val) {
+		    	
 		    },
 			sortByDepTime: function(flights) {
 				var self = this;
